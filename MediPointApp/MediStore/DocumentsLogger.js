@@ -1,29 +1,41 @@
-import React, { Component } from 'react'
+import React, { Component , useEffect } from 'react'
 import { Card, Button } from 'react-native-elements'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { View, Text, TouchableOpacity, TextInput, StyleSheet } from 'react-native'
 import * as ImagePicker from 'expo-image-picker';
+import * as FileSystem from 'expo-file-system';
 import Constants from 'expo-constants';
 
 const list = [
     {
         file: 'file1',
-        size: 'size1'
+        size: 'size1',
+        filepath: 'path'
     },
     {
         file: 'file2',
-        size: 'size2'
+        size: 'size2',
+        filepath: 'path'
     },
     {
         file: 'file3',
-        size: 'size3'
+        size: 'size3',
+        filepath: 'path'
     },
 ]
 export default class DocumentsLogger extends Component {
-    async openDocument(){
-        let result = await DocumentPicker.getDocumentAsync({});
-		alert(result.uri);
-        console.log(result);
+    state = {
+        image: null
+    }
+    donwloadFile = async (filename, fileRoute) => {
+        const fileUri = FileSystem.documentDirectory + filename;
+        const url = fileRoute;
+      
+        let downloadObject = FileSystem.createDownloadResumable(
+          url,
+          fileUri
+        );
+        let response = await downloadObject.downloadAsync();
     }
     pickImage = async () => {
         let result = await ImagePicker.launchImageLibraryAsync({
@@ -36,13 +48,10 @@ export default class DocumentsLogger extends Component {
         console.log(result);
     
         if (!result.cancelled) {
-          setImage(result.uri);
+            this.setState({image: result.uri});
         }
     };
     handleDelete = (file) => {
-        alert(file);
-    }
-    handleSubmit = (file) => {
         alert(file);
     }
     render(){
@@ -73,7 +82,7 @@ export default class DocumentsLogger extends Component {
                                             buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0}}
                                             type='clear'
                                             containerStyle={{alignSelf: 'flex-end'}}
-                                            onPress={()=> this.handleSubmit(l.file)}
+                                            onPress={()=> this.donwloadFile(l.file, l.filepath)}
                                         />
                                     </View>
                                 </View>                       
