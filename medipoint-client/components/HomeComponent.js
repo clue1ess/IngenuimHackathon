@@ -6,7 +6,7 @@ function Item({ item, props }) {
         <View style={styles.listItem}>
             <TouchableHighlight underlayColor='rgba(73,182,77,0.9)' onPress={() => props.navigation.navigate(item.id)}>
                 <View style={styles.container}>
-                    <Image style={styles.photo} source={{ uri: item.photo }} />
+                    <Image style={{ width: 70, height: 70 }} source={item.photo} resizeMode={'cover'} />
                     <Text style={styles.title}>{item.name}</Text>
                 </View>
             </TouchableHighlight>
@@ -20,22 +20,27 @@ export default class Home extends React.Component {
             {
                 "name": "MediCure",
                 "id": "MediCure",
-                "photo": "https:\/\/images.unsplash.com\/photo-1494790108377-be9c29b29330?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&s=707b9c33066bf8808c934c8ab394dff6"
+                "photo": require('../assets/MediCure.jpg')
             },
             {
                 "name": "MediPredict",
                 "id": "MediPredict",
-                "photo": "https:\/\/randomuser.me\/api\/portraits\/women\/44.jpg"
+                "photo": require('../assets/MediPredict.png')
             },
             {
                 "name": "MediPedia",
                 "id": "MediPedia",
-                "photo": "https:\/\/randomuser.me\/api\/portraits\/women\/68.jpg"
+                "photo": require('../assets/MediPedia.jpg')
             },
             {
                 "name": "MediAppoint",
                 "id": "MediAppoint",
-                "photo": "https:\/\/randomuser.me\/api\/portraits\/women\/65.jpg"
+                "photo": require('../assets/MediAppoint.png')
+            },
+            {
+                "name": "MediStore",
+                "id": "MediStore",
+                "photo": require('../assets/MediStore.png')
             }
         ]
     }
@@ -44,6 +49,9 @@ export default class Home extends React.Component {
     render() {
         return (
             <View style={styles.container}>
+                <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#954535', alignSelf: 'center', marginBottom: 10 }}>MediPoint</Text>
+
+                {/* <Image style={{ width: 70, height: 70 }} source={require('../assets/Logo/MediPoint.png')} resizeMode={'cover'} /> */}
                 <FlatList
                     vertical
                     showsVerticalScrollIndicator={false}
@@ -53,6 +61,7 @@ export default class Home extends React.Component {
                     renderItem={({ item }) => <Item item={item} props={this.props} />}
                     keyExtractor={item => item.id}
                 />
+
             </View>
         );
     }
@@ -61,16 +70,17 @@ export default class Home extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#F7F7F7',
-        marginTop: 60
+        marginTop: 30
     },
     listItem: {
         margin: 10,
         padding: 10,
-        backgroundColor: "#FFF",
         width: "80%",
         flex: 1,
+        backgroundColor: '#edc9af',
         alignSelf: "center",
+        justifyContent: 'center',
+        alignItems: 'center',
         flexDirection: "row",
         borderRadius: 5
     }

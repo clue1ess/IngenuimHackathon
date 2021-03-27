@@ -27,7 +27,7 @@ class MediCure extends React.Component {
     }
 
     static navigationOptions = {
-        title: 'MediCureHome'
+        title: 'MediCure'
     };
 
     updateSearch(text) {
@@ -38,9 +38,10 @@ class MediCure extends React.Component {
     };
 
     componentDidMount() {
+        console.log(localStorage.getItem('token'));
         const token = "Bearer " + localStorage.getItem('token');
 
-        fetch('http://localhost:3000/cures', {
+        fetch('https://f00046397697.ngrok.io/cures', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -126,7 +127,7 @@ const styles = StyleSheet.create({
     searchStyle: {
         // position: 'fixed',
         zIndex: 9,
-        top: 90,
+        top: 20,
         height: 5,
         width: '100%',
         alignItems: 'center',

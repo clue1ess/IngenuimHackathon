@@ -27,7 +27,7 @@ class MediPedia extends React.Component {
     }
 
     static navigationOptions = {
-        title: 'MediPediaHome'
+        title: 'MediPedia'
     };
 
     updateSearch(text) {

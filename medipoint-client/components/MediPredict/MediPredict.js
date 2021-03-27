@@ -3,7 +3,7 @@ import { StyleSheet, Text, SectionList, View, ScrollView, TouchableOpacity } fro
 //import { TouchableOpacity } from 'react-native-gesture-handler';
 // import Header from '../Header/header'
 import { Button, CheckBox } from 'react-native-elements';
-import { withNavigationFocus } from 'react-navigation';
+// import { withNavigationFocus } from 'react-navigation';
 import Loading from '../../screens/Loading';
 
 
@@ -13,6 +13,10 @@ class MediPredict extends React.Component {
     state = {
         checked: false,
         checkedList: []
+    };
+
+    static navigationOptions = {
+        title: 'MediPredict'
     };
 
     componentDidMount() {
@@ -88,6 +92,7 @@ class MediPredict extends React.Component {
                     title={item.name}
                     checked={item.isChecked}
                     onPress={item => this.updateChecked(item, index)}
+                    backgroundColor="white"
                 />
             );
         });
@@ -95,50 +100,49 @@ class MediPredict extends React.Component {
     render() {
 
         return (
-            !this.props.isFocused ? null : (
-                this.state.checkedList ?
-                    <ScrollView style={styles.container}>
-                        {/* <View style={{ zIndex: 9 }}>
+            this.state.checkedList.length ?
+                <ScrollView style={styles.container}>
+                    {/* <View style={{ zIndex: 9 }}>
                     <Header heading="MediPredict" />
                 </View> */}
-                        <View style={{ flexDirection: 'column' }}>
-                            <View style={{ top: 60 }}>
-                                <View style={{ left: '5%' }}>
-                                    <Text style={{ fontSize: 20, fontWeight: 'bold' }}>
-                                        Symptoms
+                    <View style={{ flexDirection: 'column' }}>
+                        <View style={{ top: 20 }}>
+                            <View style={{ left: '5%' }}>
+                                <Text style={{ fontSize: 20, fontWeight: 'bold' }}>
+                                    Symptoms
                             </Text>
-                                </View>
-                                <View style={{ top: 10 }}>
-                                    {
-                                        this.renderCheckbox()
-                                    }
-                                </View>
                             </View>
-                            <View style={{ flexDirection: 'row' }}>
-                                <View style={{ top: 100, width: 100, flex: 1 }} />
-                                <View style={{ top: 100, width: 100, flex: 2 }}>
-                                    <Button
-                                        title="Predict"
-                                        buttonStyle={{ backgroundColor: 'green' }}
-                                        onPress={this.predictDisease}
-                                    />
-                                </View>
-                                <View style={{ top: 100, width: 100, flex: 1 }} />
-                                <View style={{ top: 100, width: 100, flex: 2 }}>
-                                    <Button
-                                        title="Clear"
-                                        buttonStyle={{ backgroundColor: 'orange' }}
-                                        onPress={this.clearCheckbox}
-                                    />
-                                </View>
-                                <View style={{ top: 100, width: 100, flex: 1 }} />
+                            <View style={{ top: 10, backgroundColor: "white" }}>
+                                {
+                                    this.renderCheckbox()
+                                }
                             </View>
                         </View>
+                        <View style={{ flexDirection: 'row' }}>
+                            <View style={{ top: 100, width: 100, flex: 1 }} />
+                            <View style={{ top: 100, width: 100, flex: 2 }}>
+                                <Button
+                                    title="Predict"
+                                    buttonStyle={{ backgroundColor: 'green' }}
+                                    onPress={this.predictDisease}
+                                />
+                            </View>
+                            <View style={{ top: 100, width: 100, flex: 1 }} />
+                            <View style={{ top: 100, width: 100, flex: 2 }}>
+                                <Button
+                                    title="Clear"
+                                    buttonStyle={{ backgroundColor: 'red' }}
+                                    onPress={this.clearCheckbox}
+                                />
+                            </View>
+                            <View style={{ top: 100, width: 100, flex: 1 }} />
+                        </View>
+                    </View>
 
-                    </ScrollView>
-                    :
-                    <View><Loading /></View>
-            )
+                </ScrollView>
+                :
+                <View><Loading /></View>
+
         );
     }
 
@@ -147,9 +151,10 @@ class MediPredict extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: 'white',
         alignContent: 'center'
     }
 })
 
-export default withNavigationFocus(MediPredict);
+// export default withNavigationFocus(MediPredict);
+export default MediPredict;

@@ -72,7 +72,7 @@ class DoctorDetails extends Component {
     };
   }
   static navigationOptions = {
-    title: 'MediAppointHome'
+    title: 'MediAppoint'
   };
   componentDidMount() {
     const token = "Bearer " + localStorage.getItem('token');

@@ -6,6 +6,7 @@ import { Card, Button, Input } from 'react-native-elements'
 import { render } from 'react-dom';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import baseUrl from '../../config';
+import { Alert } from 'react-native';
 // export const requestLogin = (creds) => {
 //     return {
 //         type: ActionTypes.LOGIN_REQUEST,
@@ -85,17 +86,17 @@ export default class Login extends React.Component {
             return false
         }
         else {
-            this.props.navigation.navigate('Main');
+            this.props.navigation.navigate('Home');
         }
     }
     getResponseFromServer(uname, pwd) {
-
+        console.log("login");
         var creds = {
             "username": uname,
             "password": pwd
         }
 
-        return fetch('http://localhost:3000/users/login', {
+        return fetch('https://f00046397697.ngrok.io/users/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -106,8 +107,10 @@ export default class Login extends React.Component {
             .then(response => {
                 if (response.success) {
                     console.log("success");
+
                     localStorage.setItem('token', response.token);
                     localStorage.setItem('creds', JSON.stringify(creds));
+                    console.log(localStorage.getItem('token'));
                     return true;
                 }
                 else {
@@ -115,6 +118,7 @@ export default class Login extends React.Component {
                     // error.response = response;
                     // console.log(error);
                     // throw error;
+                    Alert.alert(response.status);
                     return false;
                 }
             })
@@ -151,7 +155,7 @@ export default class Login extends React.Component {
             <View style={styles.container}>
 
                 <View style={{ flex: 1, top: '5%' }}>
-                    <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#f4511e', alignSelf: 'center' }}>MediPoint</Text>
+                    <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#954535', alignSelf: 'center' }}>MediPoint</Text>
 
                     <View>
                         <Input
