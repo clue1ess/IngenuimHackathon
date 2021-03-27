@@ -11,8 +11,10 @@ var authenticate = require('./authenticate');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var symptomsRouter = require('./routes/symptoms');
 var diseasesRouter = require('./routes/diseases');
-
+var curesRouter = require('./routes/cures');
+var predictRouter = require('./routes/predict');
 
 const url = config.mongoUrl;
 const connect = mongoose.connect(url);
@@ -38,8 +40,10 @@ app.use(passport.initialize());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/symptoms', symptomsRouter);
 app.use('/diseases', diseasesRouter);
-
+app.use('/cures', curesRouter);
+app.use('/predict', predictRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
