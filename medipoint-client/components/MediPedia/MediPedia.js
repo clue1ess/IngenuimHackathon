@@ -4,9 +4,10 @@ import { StyleSheet, Text, SectionList, View, ScrollView, TouchableOpacity, Plat
 // import Header from '../components/header'
 import { ListItem, SearchBar, Card } from 'react-native-elements';
 // import { useNavigation } from '@react-navigation/native';
-import baseUrl from '../../config';
+import { baseUrl } from '../../config';
 import { withNavigationFocus } from 'react-navigation';
 import Loading from '../../screens/Loading';
+
 
 
 
@@ -40,7 +41,7 @@ class MediPedia extends React.Component {
     componentDidMount() {
         const token = "Bearer " + localStorage.getItem('token');
 
-        fetch('http://localhost:3000/diseases', {
+        fetch(baseUrl + 'diseases', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -127,7 +128,7 @@ const styles = StyleSheet.create({
     searchStyle: {
         // position: 'fixed',
         zIndex: 9,
-        top: 90,
+        top: 30,
         height: 5,
         width: '100%',
         alignItems: 'center',

@@ -5,7 +5,7 @@ import React from 'react';
 import Header from '../Header/header';
 import { render } from 'react-dom';
 import { withNavigationFocus } from 'react-navigation';
-
+import { baseUrl } from '../../config';
 
 class CureInfo extends React.Component {
     constructor(props) {
@@ -21,7 +21,7 @@ class CureInfo extends React.Component {
 
     fetchDesc(id) {
         const token = "Bearer " + localStorage.getItem('token');
-        return fetch('http://localhost:3000/cures/' + id, {
+        return fetch(baseUrl + 'cures/' + id, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -66,26 +66,27 @@ class CureInfo extends React.Component {
 
 const styles = StyleSheet.create({
     cardContainer: {
-        top: 20,
+        top: 1,
         padding: 20,
         width: '100%',
         overflow: 'hidden'
     },
     headerStyle: {
-        backgroundColor: '#fff',
+
         height: 50,
         alignItems: 'center',
         justifyContent: 'center',
         // position: 'fixed',
         left: 0,
         right: 0,
-        top: 60,
+        top: 20,
         zIndex: 9
     },
     title: {
         fontSize: 20,
         fontWeight: 'bold',
-        fontFamily: 'cambria'
+        color: '#954535'
+        // fontFamily: 'cambria'
     }
 })
 

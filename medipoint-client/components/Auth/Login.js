@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { Card, Button, Input } from 'react-native-elements'
 import { render } from 'react-dom';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import baseUrl from '../../config';
+import { baseUrl } from '../../config';
 import { Alert } from 'react-native';
 // export const requestLogin = (creds) => {
 //     return {
@@ -96,7 +96,7 @@ export default class Login extends React.Component {
             "password": pwd
         }
 
-        return fetch('https://f00046397697.ngrok.io/users/login', {
+        return fetch(baseUrl + 'users/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -107,7 +107,6 @@ export default class Login extends React.Component {
             .then(response => {
                 if (response.success) {
                     console.log("success");
-
                     localStorage.setItem('token', response.token);
                     localStorage.setItem('creds', JSON.stringify(creds));
                     console.log(localStorage.getItem('token'));

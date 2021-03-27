@@ -53,7 +53,7 @@ export default class DrawerContainer extends React.Component {
                         title="MediStore"
                         source={require('../assets/MediStore.png')}
                         onPress={() => {
-                            navigation.navigate('MediPredict');
+                            navigation.navigate('MediStore');
                             navigation.closeDrawer();
                         }}
                     />

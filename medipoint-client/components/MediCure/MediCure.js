@@ -4,7 +4,7 @@ import { StyleSheet, Text, SectionList, View, ScrollView, TouchableOpacity, Plat
 // import Header from '../components/header'
 import { ListItem, SearchBar, Card } from 'react-native-elements';
 // import { useNavigation } from '@react-navigation/native';
-import baseUrl from '../../config';
+import { baseUrl } from '../../config';
 import { withNavigationFocus } from 'react-navigation';
 
 import Loading from '../../screens/Loading';
@@ -41,7 +41,7 @@ class MediCure extends React.Component {
         console.log(localStorage.getItem('token'));
         const token = "Bearer " + localStorage.getItem('token');
 
-        fetch('https://f00046397697.ngrok.io/cures', {
+        fetch(baseUrl + 'cures', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -55,6 +55,7 @@ class MediCure extends React.Component {
                 this.setState({ disease: response })
                 this.setState({ filteredDiseases: response })
             })
+            .catch((err) => console.log(err));
     }
 
     render() {
@@ -127,7 +128,7 @@ const styles = StyleSheet.create({
     searchStyle: {
         // position: 'fixed',
         zIndex: 9,
-        top: 20,
+        top: 30,
         height: 5,
         width: '100%',
         alignItems: 'center',

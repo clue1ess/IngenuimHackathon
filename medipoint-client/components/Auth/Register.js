@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { Card, Button, Input, ButtonGroup } from 'react-native-elements'
 import { render } from 'react-dom';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { Alert } from 'react-native';
 
 
 export default class Register extends React.Component {
@@ -30,7 +31,8 @@ export default class Register extends React.Component {
             return false
         }
         else {
-            this.props.navigation.navigate('Home');
+            Alert.alert("Registration Successful!");
+            this.props.navigation.navigate('Login');
         }
     }
     validate(emailID, uname, pwd, cpwd) {
@@ -57,7 +59,7 @@ export default class Register extends React.Component {
             alert("Please enter correct email ID")
             return false;
         }
-        if (pwd.length < 5 || uname.length < 3) {
+        if (pwd.length < 2 || uname.length < 3) {
             alert("Please provide valid username or password!");
             return false;
         }
@@ -74,10 +76,10 @@ export default class Register extends React.Component {
             <View style={styles.container}>
 
                 <View style={{ flex: 1, top: '5%' }}>
-                    <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#f4511e', alignSelf: 'center' }}>MediPoint</Text>
+                    <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#954535', alignSelf: 'center' }}>MediPoint</Text>
                     <View>
                         <Input
-                            placeholder='email'
+                            placeholder='Email'
                             onChangeText={value => this.setState({ email: value })}
                             containerStyle={{ width: '80%', alignSelf: 'center', top: '35%' }}
                         />

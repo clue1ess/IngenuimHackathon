@@ -11,6 +11,7 @@ require('./img/dr_Maya.png'),
 require('./img/dr_david.png')]
 import { withNavigationFocus } from 'react-navigation';
 import Loading from '../../screens/Loading';
+import { baseUrl } from '../../config';
 
 // const doctors= [
 //   {
@@ -77,7 +78,7 @@ class DoctorDetails extends Component {
   componentDidMount() {
     const token = "Bearer " + localStorage.getItem('token');
 
-    fetch('http://localhost:3000/doctors', {
+    fetch(baseUrl + 'doctors', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

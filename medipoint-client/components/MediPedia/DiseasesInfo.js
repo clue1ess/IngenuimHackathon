@@ -4,9 +4,11 @@ import { useState } from 'react';
 import React from 'react';
 import Header from '../Header/header';
 import { render } from 'react-dom';
+import { baseUrl } from '../../config';
+import { withNavigationFocus } from 'react-navigation';
 
 
-export default class DiseasesInfo extends React.Component {
+class DiseasesInfo extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -20,7 +22,7 @@ export default class DiseasesInfo extends React.Component {
 
     fetchDesc(id) {
         const token = "Bearer " + localStorage.getItem('token');
-        return fetch('http://localhost:3000/diseases/' + id, {
+        return fetch(baseUrl + 'diseases/' + id, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -39,20 +41,22 @@ export default class DiseasesInfo extends React.Component {
         const disease = this.props.navigation.getParam('disease', '');
         const description = this.fetchDesc(disease);
         return (
-            <View style={{ flex: 1, overflow: 'hidden' }}>
-                {/* <View style={{ zIndex: 9 }}>
+            !this.props.isFocused ? null : (
+                <View style={{ flex: 1, overflow: 'hidden' }}>
+                    {/* <View style={{ zIndex: 9 }}>
                     <Header heading="MediPedia" />
                 </View> */}
-                <View style={styles.headerStyle}>
-                    <Text style={styles.title}>{this.state.description.name}</Text>
-                </View>
-                <View style={styles.cardContainer}>
-                    <View style={{ paddingBottom: 50, paddingTop: 10 }}>
-                        <Text style={{ paddingTop: 30, textAlign: 'justify' }}>
-                            {this.state.description.info} </Text>
+                    <View style={styles.headerStyle}>
+                        <Text style={styles.title}>{this.state.description.name}</Text>
+                    </View>
+                    <View style={styles.cardContainer}>
+                        <View style={{ paddingBottom: 50, paddingTop: 10 }}>
+                            <Text style={{ paddingTop: 30, textAlign: 'justify' }}>
+                                {this.state.description.info} </Text>
+                        </View>
                     </View>
                 </View>
-            </View>
+            )
         );
     }
 
@@ -60,25 +64,27 @@ export default class DiseasesInfo extends React.Component {
 
 const styles = StyleSheet.create({
     cardContainer: {
-        top: 20,
+        top: 1,
         padding: 20,
         width: '100%',
         overflow: 'hidden'
     },
     headerStyle: {
-        backgroundColor: '#fff',
+
         height: 50,
         alignItems: 'center',
         justifyContent: 'center',
         // position: 'fixed',
         left: 0,
         right: 0,
-        top: 60,
+        top: 20,
         zIndex: 9
     },
     title: {
         fontSize: 20,
         fontWeight: 'bold',
-        fontFamily: 'cambria'
+        color: '#954535'
+        // fontFamily: 'cambria'
     }
 })
+export default withNavigationFocus(DiseasesInfo);

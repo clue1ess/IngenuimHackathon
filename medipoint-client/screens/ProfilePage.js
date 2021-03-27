@@ -4,28 +4,40 @@ import { Card, Button, Input, Avatar } from 'react-native-elements'
 import Icon from 'react-native-vector-icons/FontAwesome';
 // import Header from '../components/header'
 
-const firstname = "Firstname"
-const lastname = "Lastname"
-const username = "Username"
-const dob = "DOB"
-const gender = "Gender"
-const email = "email@address.com"
-const city = "City"
-const contact = "Contact"
+// const firstname = "Firstname"
+// const lastname = "Lastname"
+// const username = "Username"
+// const dob = "DOB"
+// const gender = "Gender"
+// const email = "email@address.com"
+// const city = "City"
+// const contact = "Contact"
+// const creds = localStorage.getItem("creds", {
+//     firstname: "",
+//     lastname: "",
+//     dob: "",
+//     city: "",
+//     contact: "",
+//     gender: "",
+//     email: ""
+// });
 export default class Profile extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            firstname: '',
-            lastname: '',
-            dob: '',
-            city: '',
-            contact: ''
+            firstname: "Gouri",
+            lastname: "Nangliya",
+            dob: "07-09-1999",
+            city: "Pune",
+            contact: "7894561235",
+            gender: "Female",
+            email: "gouri@gmail.com",
+            username: "gmn79"
         };
     }
 
     static navigationOptions = {
-        title: 'MyPofile'
+        title: 'Profile'
     };
 
     save = () => {
@@ -48,7 +60,7 @@ export default class Profile extends React.Component {
                 </View>
                 <View>
                     <Input
-                        value={firstname.concat(" ".concat(lastname))}
+                        value={this.state.firstname + " " + this.state.lastname}
                         onChangeText={(value) => {
                             res = value.split(" ");
                             this.setState({ firstname: res[0], lastname: res[1] })
@@ -58,14 +70,14 @@ export default class Profile extends React.Component {
                 </View>
                 <View>
                     <Input
-                        value={username}
+                        value={this.state.username}
                         disabled
                         inputContainerStyle={{ width: '70%', top: 80, alignSelf: 'center' }}
                     />
                 </View>
                 <View>
                     <Input
-                        value={dob}
+                        value={this.state.dob}
                         onChangeText={(value) => {
                             this.setState({ dob: value })
                         }}
@@ -74,21 +86,21 @@ export default class Profile extends React.Component {
                 </View>
                 <View>
                     <Input
-                        value={gender}
+                        value={this.state.gender}
                         disabled
                         inputContainerStyle={{ width: '70%', top: 80, alignSelf: 'center' }}
                     />
                 </View>
                 <View>
                     <Input
-                        value={email}
+                        value={this.state.email}
                         disabled
                         inputContainerStyle={{ width: '70%', top: 80, alignSelf: 'center' }}
                     />
                 </View>
                 <View>
                     <Input
-                        value={city}
+                        value={this.state.city}
                         onChangeText={(value) => {
                             this.setState({ city: value })
                         }}
@@ -97,7 +109,7 @@ export default class Profile extends React.Component {
                 </View>
                 <View>
                     <Input
-                        value={contact}
+                        value={this.state.contact}
                         onChangeText={(value) => {
                             this.setState({ dob: value })
                         }}
@@ -113,13 +125,13 @@ export default class Profile extends React.Component {
                         type='clear'
                     />
                 </View>
-                <View style={{ top: 90 }}>
+                {/* <View style={{ top: 90 }}>
                     <Button
                         title="Save Changes"
                         onPress={this.save}
                         buttonStyle={styles.loginbuttonStyle}
                     />
-                </View>
+                </View> */}
             </View>
         );
     }

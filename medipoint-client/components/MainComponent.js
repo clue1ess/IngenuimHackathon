@@ -258,6 +258,10 @@ import Logout from './Auth/Logout';
 import Profile from '../screens/ProfilePage';
 import Login from './Auth/Login';
 import Register from './Auth/Register';
+import MediStore from './MediStore/MediStore';
+import MedicineLogger from './MediStore/MedicineLogger';
+import DocumentsLogger from './MediStore/DocumentsLogger';
+import CheckAppointments from '../screens/CheckAppointments';
 
 
 
@@ -274,7 +278,11 @@ const MainNavigator = createStackNavigator(
         Profile: Profile,
         Logout: Logout,
         Login: Login,
-        Register: Register
+        Register: Register,
+        MediStore: MediStore,
+        MedicineLogger: MedicineLogger,
+        DocumentsLogger: DocumentsLogger,
+        CheckAppointments: CheckAppointments
     },
     {
         initialRouteName: 'Login',
@@ -314,3 +322,4 @@ const DrawerStack = createDrawerNavigator(
 
 const AppContainer = createAppContainer(DrawerStack);
 export default AppContainer;
+console.disableYellowBox = true;
