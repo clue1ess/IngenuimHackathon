@@ -43,4 +43,4 @@ doctorRouter.route('/')
         res.end("Delete on /doctors not supported!");
     });
 
-
+module.exports = doctorRouter;
