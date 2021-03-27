@@ -3,15 +3,30 @@ import { Card, Button } from 'react-native-elements'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { View, Text, TouchableOpacity, TextInput, StyleSheet } from 'react-native'
 
-const medicine="Medicine"
-const pres="XYZ"
-const notes="XYZ"
+const list = [
+    {
+        medicine: 'Medicine1',
+        prescription: 'Prescription1',
+        notes: 'Notes1'
+    },
+    {
+        medicine: 'Medicine2',
+        prescription: 'Prescription2',
+        notes: 'Notes2'
+    },
+    {
+        medicine: 'Medicine3',
+        prescription: 'Prescription3',
+        notes: 'Notes3'
+    },
+]
 
 class MedicineLogger extends Component {
     state = {
         name: '',
         pres: '',
         notes: '',
+        medicines: list,
         show: false
     }
     handleName = (text) => {
@@ -29,8 +44,8 @@ class MedicineLogger extends Component {
             show: false
         });
     }
-    handleDelete = () => {
-        alert('Delete');
+    handleDelete = (medicine, pres, notes) => {
+        alert(medicine + pres + notes);
     }
     render() {
         return (
@@ -42,58 +57,7 @@ class MedicineLogger extends Component {
                         containerStyle={{alignSelf:'flex-end', borderRadius: 100, marginRight: 10}}
                         onPress={()=>{this.setState({show: true})}}
                     />
-                <Card>
-                    <Card.Title>Medicine: { medicine }</Card.Title>
-                    <Card.Divider/>
-                        <View style={{flexDirection: 'row'}}>
-                            <View style={{flex: 5}}>
-                                <Text style={{marginBottom: 10}}>
-                                    Prescription: {pres}
-                                </Text>
-                                <Text style={{marginBottom: 10}}>
-                                    Notes: {notes}
-                                </Text>
-                            </View>
-                            <View style={{flex: 1}}>
-                                <Button
-                                    icon={{ type: 'font-awesome', name: 'trash', color: 'red' }}
-                                    buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0}}
-                                    type='clear'
-                                    containerStyle={{alignSelf: 'flex-end'}}
-                                    onPress={
-                                        this.handleDelete
-                                    }
-                                />
-                            </View>
-                        </View>                       
-                        
-                </Card>
-                <Card>
-                    <Card.Title>Medicine: { medicine }</Card.Title>
-                    <Card.Divider/>
-                        <View style={{flexDirection: 'row'}}>
-                            <View style={{flex: 5}}>
-                                <Text style={{marginBottom: 10}}>
-                                    Prescription: {pres}
-                                </Text>
-                                <Text style={{marginBottom: 10}}>
-                                    Notes: {notes}
-                                </Text>
-                            </View>
-                            <View style={{flex: 1}}>
-                                <Button
-                                    icon={{ type: 'font-awesome', name: 'trash', color: 'red' }}
-                                    buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0}}
-                                    type='clear'
-                                    containerStyle={{alignSelf: 'flex-end'}}
-                                    onPress={
-                                        this.handleDelete
-                                    }
-                                />
-                            </View>
-                        </View>                       
-                        
-                </Card>
+                    
 
                 {
                     this.state.show &&
@@ -129,7 +93,37 @@ class MedicineLogger extends Component {
                         </TouchableOpacity>
 
                     </View>
-                }              
+                }       
+                {
+                    list.map((l, i)=>(
+                        <Card>
+                            <Card.Title>Medicine: { l.medicine }</Card.Title>
+                            <Card.Divider/>
+                                <View style={{flexDirection: 'row'}}>
+                                    <View style={{flex: 5}}>
+                                        <Text style={{marginBottom: 10}}>
+                                            Prescription: { l.prescription }
+                                        </Text>
+                                        <Text style={{marginBottom: 10}}>
+                                            Notes: { l.notes }
+                                        </Text>
+                                    </View>
+                                    <View style={{flex: 1}}>
+                                        <Button
+                                            icon={{ type: 'font-awesome', name: 'trash', color: 'red' }}
+                                            buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0}}
+                                            type='clear'
+                                            containerStyle={{alignSelf: 'flex-end'}}
+                                            onPress={()=> this.handleDelete(l.medicine, l.prescription, l.notes)}
+                                        />
+                                    </View>
+                                </View>                       
+                                
+                        </Card>
+
+                    ))
+                }
+                       
             </View>
         )
     }
