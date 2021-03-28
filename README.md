@@ -1,5 +1,5 @@
 
-# <div align="center"> IngenuimHackathon </div>
+# <div IngenuimHackathon </div>
 
 
 ## MediPoint
