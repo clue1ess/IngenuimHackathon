@@ -4,7 +4,7 @@
 
 #### Team Name
 
-BETA
+Beta
 
 #### Team Members
 
@@ -32,7 +32,7 @@ MediPoint is an online healthcare platform which is designed for the greater goo
 #### MediAppoint
 <!-- 
 ![MediAppoint-Logo](./Logo/MediAppoint.png) -->
-![MediAppoint-Diagram](./Diagrams/MediAppoint.png)
+![MediAppoint-Diagram](./Diagrams/MediAppoint.png)<br>
 MediAppoint is the component of our application that deals with scheduling appointments of patients with their Doctors. We focus on saving our customers time and avoid the long waiting period. There is a transparency in the time-slot bookings, customer can check for the available slots and book an appointment as per his/her convenience. 
 
 #### MediPedia
