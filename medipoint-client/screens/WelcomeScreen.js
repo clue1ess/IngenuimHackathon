@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
-// import HomeStack from './HomeStack';
-// import Login from './Login';
+import { StyleSheet, View, Image } from 'react-native';
+
 
 export default class WelcomeScreen extends Component {
   constructor() {
@@ -17,7 +16,6 @@ export default class WelcomeScreen extends Component {
   }
 
   componentDidMount = () => {
-    //var that = this;  
     setTimeout(() => {
       this.Hide_Splash_Screen();
     }, 3000);
@@ -35,7 +33,6 @@ export default class WelcomeScreen extends Component {
       </View>)
     return (
       <View style={styles.MainContainer}>
-        {/* <HomeStack/>   */}
         {
           (this.state.isVisible === true) ? Splash_Screen : null
         }

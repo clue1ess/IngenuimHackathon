@@ -1,13 +1,4 @@
-
-
 import * as React from 'react';
-import { Button, View, Text } from 'react-native';
-import { createAppContainer } from 'react-navigation';
-import { createStackNavigator } from 'react-navigation-stack';
-import Login from './Login';
-import Register from './Register';
-import Home from '../HomeComponent';
-
 
 const Nav = ({ props }) => {
     localStorage.removeItem('token');

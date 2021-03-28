@@ -1,13 +1,6 @@
 import React, { Component } from 'react';
 import { View, Button, Text, TouchableOpacity } from 'react-native';
 import { Card } from 'react-native-elements'
-import MedicineLogger from './MedicineLogger';
-import DocumentsLogger from './DocumentsLogger';
-// import { Container, Header, Title } from 'native-base';
-
-// const Stack = createStackNavigator();
-
-
 
 
 class MediStore extends Component {

@@ -1,10 +1,6 @@
 import React from 'react';
-import { StyleSheet, Text, SectionList, View, ScrollView, TouchableOpacity } from 'react-native';
-//import { TouchableOpacity } from 'react-native-gesture-handler';
-import { useState } from 'react';
-import { Card, Button, Input, ButtonGroup } from 'react-native-elements'
-import { render } from 'react-dom';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import { StyleSheet, Text, View } from 'react-native';
+import { Button, Input, ButtonGroup } from 'react-native-elements'
 import { Alert } from 'react-native';
 
 

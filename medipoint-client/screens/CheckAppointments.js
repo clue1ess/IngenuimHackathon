@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
-import { Card, Button } from 'react-native-elements'
-import Icon from 'react-native-vector-icons/FontAwesome';
-import { View, Text, TouchableOpacity, TextInput, StyleSheet } from 'react-native'
+import { Card } from 'react-native-elements'
+import { View, Text, StyleSheet } from 'react-native'
 
 const list = [
     {
         name: 'Dr. Maya Bose',
         timing: '11:00-11:30',
-        hospital: 'Sanjeevani Hospital'
+        hospital: 'Aaayu Hospital'
     }
 ]
 

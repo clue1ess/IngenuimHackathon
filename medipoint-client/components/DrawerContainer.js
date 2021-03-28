@@ -90,12 +90,10 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
         paddingTop: 20,
-        // alignItems: 'flex-start',
         justifyContent: 'center'
     },
     container: {
         flex: 1,
-        // alignItems: 'flex-start',
         paddingHorizontal: 20,
         backgroundColor: "#f7e7ce"
     }

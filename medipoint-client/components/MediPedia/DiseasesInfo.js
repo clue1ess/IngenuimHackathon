@@ -1,9 +1,5 @@
 import { StyleSheet, TextInput, Text, View, ScrollView } from 'react-native';
-import { Card, ListItem, Button, Icon } from 'react-native-elements'
-import { useState } from 'react';
 import React from 'react';
-import Header from '../Header/header';
-import { render } from 'react-dom';
 import { baseUrl } from '../../config';
 import { withNavigationFocus } from 'react-navigation';
 
@@ -34,7 +30,6 @@ class DiseasesInfo extends React.Component {
             .then(response => {
                 console.log(response);
                 this.setState({ description: response })
-                // this.setState({ filteredDiseases: response })
             })
     }
     render() {
@@ -43,16 +38,16 @@ class DiseasesInfo extends React.Component {
         return (
             !this.props.isFocused ? null : (
                 <View style={{ flex: 1, overflow: 'hidden' }}>
-                    {/* <View style={{ zIndex: 9 }}>
-                    <Header heading="MediPedia" />
-                </View> */}
                     <View style={styles.headerStyle}>
-                        <Text style={styles.title}>{this.state.description.name}</Text>
+                        <Text style={styles.title}>
+                            {this.state.description.name}
+                        </Text>
                     </View>
                     <View style={styles.cardContainer}>
                         <View style={{ paddingBottom: 50, paddingTop: 10 }}>
                             <Text style={{ paddingTop: 30, textAlign: 'justify' }}>
-                                {this.state.description.info} </Text>
+                                {this.state.description.info}
+                            </Text>
                         </View>
                     </View>
                 </View>
@@ -74,7 +69,6 @@ const styles = StyleSheet.create({
         height: 50,
         alignItems: 'center',
         justifyContent: 'center',
-        // position: 'fixed',
         left: 0,
         right: 0,
         top: 20,
@@ -84,7 +78,6 @@ const styles = StyleSheet.create({
         fontSize: 20,
         fontWeight: 'bold',
         color: '#954535'
-        // fontFamily: 'cambria'
     }
 })
 export default withNavigationFocus(DiseasesInfo);

@@ -1,29 +1,8 @@
-import React, { Component, useState } from 'react';
-
-import {
-  Alert, Platform, Pressable, Modal, StyleSheet, Dimensions, Center, Image,
-  FlatList, ScrollView, View, TouchableOpacity, Text, useEffect
-} from 'react-native';
-
-import * as Font from 'expo-font';
-import { Ionicons } from '@expo/vector-icons';
-// import { data } from '../../../model/data';
+import React, { Component } from 'react';
+import { Pressable, Modal, StyleSheet, Image, ScrollView, View, TouchableOpacity, Text } from 'react-native';
 import { TouchableHighlight } from 'react-native-gesture-handler';
 import { withNavigationFocus } from 'react-navigation';
 
-// const doctors = [
-//   {
-//     id: '1',
-//     name: "Dr. Apurva Tiwari",
-//     hospital: "Sanjeevani Hospital",
-//     speciality: "M.B.B.S.",
-//     contact: "8888888888",
-//     img: require('../DoctorDetails/img/dr_apurva.png'),
-//     des: "Qualification: MBBS (Mum.) M.S. (Gen. Surg) (mum.) MCh (CVTS) (Mum) Department: Cardiothoracic & Vascular Surgeon Speciality: Cardio Thoracic & Vascular Surgery"
-//   },
-
-// ];
-// const doctor = []
 const time = ['10:00-10:30', '10:30-11:00', '11:00-11:30', '11:30-12:00'
   , '01:30-02:00', '02:00-02:30',
   '02:30-03:00', '03:00-03:30', '03:30-04:00', '04:00-04:30', '04:30-05:00',
@@ -46,40 +25,32 @@ class TimeSlotBooking extends Component {
     this.setState({ modalVisible: visible });
   }
 
-
+  goback() {
+    this.setModalVisible(!this.state.modalVisible);
+    this.props.navigation.navigate('MediAppoint')
+  }
 
   render() {
-    const doctor = this.props.navigation.getParam('doctor', []);
-    // const temp = this.setState({ doctor: getdoctor });
+    const doctor = this.props.navigation.getParam('doctor', "");
     return (
       !this.props.isFocused ? null : (
         doctor ?
           <ScrollView style={styles.container} >
-            {/* { */}
-            {/* // this.state.doctor.map((d, i) => */}
-
-
-            <View key={doctor._id} style={styles.section}>
-
+            <View key={5000} style={styles.section}>
               <Text>
                 <Image
-                  source={img}
+                  source={doctor.img}
                   style={{ width: 60, height: 80, borderRadius: 10, margin: 10 }}>
                 </Image>
-
                 <Text style={{ fontWeight: 'bold', fontSize: 20, alignSelf: 'center' }}>{'\t'}{"Dr. " + doctor.firstname + " " + doctor.lastname}{'\n'}{'\n'}
                 </Text>
                 {'\n'}
                 <Text style={{ flex: 1 }}>{"Designation : " + doctor.designation} {'\n'}
                   {"Hospital : " + doctor.hospital} {'\n'}
                   {"Contact Num : " + doctor.contact_num} {'\n'}
-                  {"Email : " + doctor.email} {'\n'}
                 </Text>
-
               </Text>
-
             </View>
-            {/* } */}
 
             {
               time.map((t, j) =>
@@ -106,11 +77,11 @@ class TimeSlotBooking extends Component {
               >
                 <View style={styles.centeredView}>
                   <View style={styles.modalView}>
-                    <Text style={styles.modalText}>Confirm your Slot</Text>
+                    <Text style={styles.modalText}>Selected Slot is 11:00-11:30</Text>
                     <TouchableOpacity>
                       <Pressable
                         style={[styles.button, styles.buttonClose]}
-                        onPress={() => this.setModalVisible(!this.state.modalVisible)}
+                        onPress={() => this.goback()}
                       >
                         <Text style={styles.textStyle}>Confirm</Text>
                       </Pressable></TouchableOpacity>

@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Card, Button } from 'react-native-elements'
-import Icon from 'react-native-vector-icons/FontAwesome';
 import { View, Text, TouchableOpacity, TextInput, StyleSheet } from 'react-native'
 
 const list = [
@@ -65,9 +64,9 @@ class MedicineLogger extends Component {
         return (
             <View style={styles.container}>
                 <Button
-                    icon={{ type: 'font-awesome', name: 'plus', color: 'blue' }}
+                    icon={{ type: 'font-awesome', name: 'plus', color: 'white' }}
                     type='solid'
-                    buttonStyle={{ backgroundColor: 'orange' }}
+                    buttonStyle={{ backgroundColor: 'green' }}
                     containerStyle={{ alignSelf: 'flex-end', borderRadius: 100, marginRight: 10 }}
                     onPress={() => { this.setState({ show: true }) }}
                 />
@@ -79,20 +78,20 @@ class MedicineLogger extends Component {
                         <TextInput style={styles.input}
                             underlineColorAndroid="transparent"
                             placeholder="Medicine Name"
-                            placeholderTextColor="#9a73ef"
+                            placeholderTextColor="grey"
                             autoCapitalize="none"
                             onChangeText={this.handleName}
                         />
                         <TextInput style={styles.input}
                             underlineColorAndroid="transparent"
                             placeholder="Prescription"
-                            placeholderTextColor="#9a73ef"
+                            placeholderTextColor="grey"
                             autoCapitalize="none"
                             onChangeText={this.handlePres} />
                         <TextInput style={styles.input}
                             underlineColorAndroid="transparent"
                             placeholder="Notes"
-                            placeholderTextColor="#9a73ef"
+                            placeholderTextColor="grey"
                             autoCapitalize="none"
                             onChangeText={this.handleNotes} />
 
@@ -151,11 +150,11 @@ const styles = StyleSheet.create({
     input: {
         margin: 15,
         height: 40,
-        borderColor: '#7a42f4',
+        borderColor: 'black',
         borderWidth: 1
     },
     submitButton: {
-        backgroundColor: '#7a42f4',
+        backgroundColor: '#b7410e',
         padding: 10,
         margin: 15,
         height: 40,

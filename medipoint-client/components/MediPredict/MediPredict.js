@@ -1,7 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, SectionList, View, ScrollView, TouchableOpacity } from 'react-native';
-//import { TouchableOpacity } from 'react-native-gesture-handler';
-// import Header from '../Header/header'
+import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import { Button, CheckBox } from 'react-native-elements';
 import { withNavigationFocus } from 'react-navigation';
 import Loading from '../../screens/Loading';
@@ -104,9 +102,6 @@ class MediPredict extends React.Component {
             !this.props.isFocused ? null : (
                 this.state.checkedList.length ?
                     <ScrollView style={styles.container}>
-                        {/* <View style={{ zIndex: 9 }}>
-                    <Header heading="MediPredict" />
-                </View> */}
                         <View style={{ flexDirection: 'column' }}>
                             <View style={{ top: 20 }}>
                                 <View style={{ left: '5%' }}>
@@ -120,27 +115,21 @@ class MediPredict extends React.Component {
                                     }
                                 </View>
                             </View>
-                            <View style={{ flexDirection: 'row' }}>
-                                <View style={{ top: 100, width: 100, flex: 1 }} />
-                                <View style={{ top: 100, width: 100, flex: 2 }}>
-                                    <Button
-                                        title="Predict"
-                                        buttonStyle={{ backgroundColor: 'green' }}
-                                        onPress={this.predictDisease}
-                                    />
-                                </View>
-                                <View style={{ top: 100, width: 100, flex: 1 }} />
-                                <View style={{ top: 100, width: 100, flex: 2 }}>
-                                    <Button
-                                        title="Clear"
-                                        buttonStyle={{ backgroundColor: 'red' }}
-                                        onPress={this.clearCheckbox}
-                                    />
-                                </View>
-                                <View style={{ top: 100, width: 100, flex: 1 }} />
-                            </View>
-                        </View>
 
+                        </View>
+                        <View style={{ margin: 20 }}></View>
+                        <Button
+                            title="Predict"
+                            buttonStyle={{ backgroundColor: '#3cb371', width: "70%", alignSelf: "center" }}
+                            onPress={this.predictDisease}
+                        />
+                        <View style={{ margin: 5 }}></View>
+                        <Button
+                            title="Clear"
+                            buttonStyle={{ backgroundColor: '#fe6f5e', width: "70%", alignSelf: "center" }}
+                            onPress={this.clearCheckbox}
+                        />
+                        <View style={{ margin: 5 }}></View>
                     </ScrollView>
                     :
                     <View><Loading /></View>
@@ -156,8 +145,13 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: 'white',
         alignContent: 'center'
+    },
+    buttonStyle: {
+        borderRadius: 10,
+        width: '90%',
+        alignSelf: 'center',
+        backgroundColor: "#e7feff"
     }
 })
 
-// export default withNavigationFocus(MediPredict);
 export default withNavigationFocus(MediPredict);

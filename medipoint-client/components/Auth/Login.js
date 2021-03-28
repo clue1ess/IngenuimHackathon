@@ -1,77 +1,7 @@
 import React from 'react';
-import { StyleSheet, Text, SectionList, View, ScrollView, TouchableOpacity } from 'react-native';
-//import { TouchableOpacity } from 'react-native-gesture-handler';
-import { useState } from 'react';
-import { Card, Button, Input } from 'react-native-elements'
-import { render } from 'react-dom';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import { StyleSheet, Text, View } from 'react-native';
+import { Button, Input } from 'react-native-elements'
 import { baseUrl } from '../../config';
-import { Alert } from 'react-native';
-// export const requestLogin = (creds) => {
-//     return {
-//         type: ActionTypes.LOGIN_REQUEST,
-//         creds
-//     }
-// }
-
-// export const receiveLogin = (response) => {
-//     return {
-//         type: ActionTypes.LOGIN_SUCCESS,
-//         token: response.token
-//     }
-// }
-
-// export const loginErr = (message) => {
-//     return {
-//         type: ActionTypes.LOGIN_FAILURE,
-//         message
-//     }
-// }
-
-// export const loginUser = (creds) => (dispatch) => {
-//     dispatch(requestLogin(creds))
-
-//     return fetch(baseUrl + 'users/login', {
-//         method: 'POST',
-//         headers: {
-//             'Content-Type': 'application/json'
-//         },
-//         body: JSON.stringify(creds)
-//     })
-//         .then(response => response.json())
-//         .then(response => {
-//             if (response.success) {
-//                 localStorage.setItem('token', response.token);
-//                 localStorage.setItem('creds', JSON.stringify(creds));
-//                 dispatch(receiveLogin(response));
-//             }
-//             else {
-//                 var error = new Error('Error ' + response.status);
-//                 error.response = response;
-//                 throw error;
-//             }
-//         })
-//         .catch(error => dispatch(loginErr(error.message)))
-// }
-
-// export const requestLogout = (creds) => {
-//     return {
-//         type: ActionTypes.LOGOUT_REQUEST,
-//     }
-// }
-
-// export const receiveLogout = (response) => {
-//     return {
-//         type: ActionTypes.LOGOUT_SUCCESS
-//     }
-// }
-
-// export const logoutUser = () => (dispatch) => {
-//     dispatch(requestLogout());
-//     localStorage.removeItem('token');
-//     localStorage.removeItem('creds');
-//     dispatch(receiveLogout());
-// }
 
 
 export default class Login extends React.Component {
@@ -113,12 +43,10 @@ export default class Login extends React.Component {
                     return true;
                 }
                 else {
-                    // var error = new Error('Error ' + response.status);
-                    // error.response = response;
-                    // console.log(error);
-                    // throw error;
-                    Alert.alert(response.status);
-                    return false;
+                    var error = new Error('Error ' + response.status);
+                    error.response = response;
+                    console.log(error);
+                    throw error;
                 }
             })
 

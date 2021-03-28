@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, FlatList, Image, TouchableOpacity, TouchableHighlight } from 'react-native';
+import { StyleSheet, Text, View, FlatList, Image, TouchableHighlight } from 'react-native';
 
 function Item({ item, props }) {
     return (
@@ -51,7 +51,6 @@ export default class Home extends React.Component {
             <View style={styles.container}>
                 <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#954535', alignSelf: 'center', marginBottom: 10 }}>MediPoint</Text>
 
-                {/* <Image style={{ width: 70, height: 70 }} source={require('../assets/Logo/MediPoint.png')} resizeMode={'cover'} /> */}
                 <FlatList
                     vertical
                     showsVerticalScrollIndicator={false}

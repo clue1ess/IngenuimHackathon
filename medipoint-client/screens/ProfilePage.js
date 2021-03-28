@@ -1,36 +1,17 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Touchable } from 'react-native';
-import { Card, Button, Input, Avatar } from 'react-native-elements'
-import Icon from 'react-native-vector-icons/FontAwesome';
-// import Header from '../components/header'
+import { StyleSheet, View } from 'react-native';
+import { Button, Input, Avatar } from 'react-native-elements'
 
-// const firstname = "Firstname"
-// const lastname = "Lastname"
-// const username = "Username"
-// const dob = "DOB"
-// const gender = "Gender"
-// const email = "email@address.com"
-// const city = "City"
-// const contact = "Contact"
-// const creds = localStorage.getItem("creds", {
-//     firstname: "",
-//     lastname: "",
-//     dob: "",
-//     city: "",
-//     contact: "",
-//     gender: "",
-//     email: ""
-// });
 export default class Profile extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            firstname: "Gouri",
-            lastname: "Nangliya",
-            dob: "07-09-1999",
-            city: "Pune",
-            contact: "7894561235",
-            gender: "Female",
+            firstname: "Enter Name",
+            lastname: "",
+            dob: "Enter DOB",
+            city: "Enter City",
+            contact: "Enter Contact No.",
+            gender: "Enter Gender",
             email: "gouri@gmail.com",
             username: "gmn79"
         };
@@ -47,9 +28,6 @@ export default class Profile extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                {/* <View style={{ zIndex: 9 }}>
-                    <Header heading="Profile" />
-                </View> */}
                 <View style={{ top: 50 }}>
                     <Avatar
                         size="large"
@@ -153,7 +131,8 @@ const styles = StyleSheet.create({
     buttonStyle: {
         borderRadius: 10,
         width: '90%',
-        alignSelf: 'center'
+        alignSelf: 'center',
+        backgroundColor: "#e7feff"
     }
 
 })

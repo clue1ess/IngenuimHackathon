@@ -1,26 +1,16 @@
 import React from 'react';
 import { StyleSheet, Text, SectionList, View, ScrollView, TouchableOpacity, Platform } from 'react-native';
-//import { TouchableOpacity } from 'react-native-gesture-handler';
-// import Header from '../components/header'
 import { ListItem, SearchBar, Card } from 'react-native-elements';
-// import { useNavigation } from '@react-navigation/native';
 import { baseUrl } from '../../config';
 import { withNavigationFocus } from 'react-navigation';
-
 import Loading from '../../screens/Loading';
 
-
-
-// let list = ['Abdominal Aortic', 'ACE', 'Asthma', 'Babecia', 'Bacterial Infection', 'Birth Defects',
-//     'Black Lung', 'Bird Flu', 'Covid', 'Cancer', 'Cold', 'Cough', 'Cholera'];
-
-// const navigation = useNavigation();
 
 class MediCure extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            search: '',
+            search: 'Search',
             diseases: [],
             filteredDiseases: []
         };
@@ -59,15 +49,12 @@ class MediCure extends React.Component {
     }
 
     render() {
-        const { search } = this.state;
+        const search = this.state.search;
 
         return (
             this.state.filteredDiseases
                 ?
                 <ScrollView style={styles.container}>
-                    {/* <View style={{zIndex: 9}}>
-                <Header heading="MediPedia"/>
-            </View> */}
                     <View style={styles.searchStyle}>
                         <SearchBar
                             inputStyle={{ backgroundColor: 'white' }}
@@ -85,7 +72,7 @@ class MediCure extends React.Component {
 
                             this.state.filteredDiseases.map((l, i) => (
 
-                                <ListItem key={l._id} bottomDivider>
+                                <ListItem key={i} bottomDivider>
                                     <TouchableOpacity onPress={() => this.props.navigation.navigate('CureInfo', { disease: l._id })}  >
                                         <View style={{ width: '100%' }}>
                                             <ListItem.Content>
@@ -126,7 +113,6 @@ const styles = StyleSheet.create({
         paddingTop: 20
     },
     searchStyle: {
-        // position: 'fixed',
         zIndex: 9,
         top: 30,
         height: 5,
