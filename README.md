@@ -33,7 +33,7 @@ MediPoint is an online healthcare platform which is designed for the greater goo
 <!-- 
 ![MediAppoint-Logo](./Logo/MediAppoint.png) -->
 ![MediAppoint-Diagram](./Diagrams/MediAppoint.png)<br>
-MediAppoint is the component of our application that deals with scheduling appointments of patients with their Doctors. We focus on saving our customers time and avoid the long waiting period. There is a transparency in the time-slot bookings, customer can check for the available slots and book an appointment as per his/her convenience. 
+MediAppoint is the component of our application that deals with scheduling appointments of patients with their Doctors. We focus on saving our customers time and avoid the long waiting period. There is a transparency in the time-slot bookings, customer can check for the available slots and book an appointment as per his/her convenience. <br>
 **Features** : <br/>
 1. DB with list of Doctors 
 2. Transparency of available slots
@@ -45,7 +45,7 @@ MediAppoint is the component of our application that deals with scheduling appoi
 
 <!-- ![MediPedia-Logo](./Logo/MediPedia.png) -->
 ![MediPedia-Diagram](./Diagrams/MediPedia.png)
-MediPedia is the encyclopedia of diseases at your fingertip. Customers can select a disease and get all information like the symptoms, causes, precautions etc. 
+MediPedia is the encyclopedia of diseases at your fingertip. Customers can select a disease and get all information like the symptoms, causes, precautions etc. <br>
 **Features** : <br/>
 1. Create Database with Disease information
 2. Web Scraping of disease websites
@@ -56,7 +56,7 @@ MediPedia is the encyclopedia of diseases at your fingertip. Customers can selec
 
 <!-- ![MediCure-Logo](./Logo/MediCure.png) -->
 ![MediCure-Diagram](./Diagrams/MediCure.png)
-We live in a society where our Grandma’s Nuskha is the first step towards cure after every trivial infection. This component of MediPoint is a solution for the customer’s plight as it provides information about a First Aid treatment for an infection without having to visit the doctor in person. Medicure focuses on providing a home remedy for the selected disease/infection. 
+We live in a society where our Grandma’s Nuskha is the first step towards cure after every trivial infection. This component of MediPoint is a solution for the customer’s plight as it provides information about a First Aid treatment for an infection without having to visit the doctor in person. Medicure focuses on providing a home remedy for the selected disease/infection. <br>
 **Features** : <br/>
 1. Home remedies for diseases stored in database
 2. Web Scraping from diseases website
@@ -66,7 +66,7 @@ We live in a society where our Grandma’s Nuskha is the first step towards cure
 
 <!-- ![MediPredict-Logo](./Logo/MediPredict.png) -->
 ![MediPredict-Diagram](./Diagrams/MediPredict.png)
-MediPredict is the component of MediPoint that predicts the disease after getting the symptoms of the customer as input. This component can help the customer to know what his/her symptoms signify and avoid jumping to impromptu conclusion.
+MediPredict is the component of MediPoint that predicts the disease after getting the symptoms of the customer as input. This component can help the customer to know what his/her symptoms signify and avoid jumping to impromptu conclusion.<br>
 **Features** : <br/>
 1. Predict the disease by taking symptoms input from user
 2. ML model using Decision Trees
@@ -78,7 +78,7 @@ MediPredict is the component of MediPoint that predicts the disease after gettin
 ![MediStore-Diagram](./Diagrams/MediStore.png)
 MediStore has two parts
 Document Logger - Stores prescription and important documents of the user 
-Medicine Logger - Logs medicines dose.
+Medicine Logger - Logs medicines dose.<br>
 **Features** : <br/>
 1. Storage destination for all the health care documents
 2. Medicine Logger 
