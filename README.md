@@ -65,7 +65,7 @@ We live in a society where our Grandma’s Nuskha is the first step towards cure
 #### MediPredict
 
 <!-- ![MediPredict-Logo](./Logo/MediPredict.png) -->
-![MediPredict-Diagram](./Diagrams/MediPredict.jpg)
+![MediPredict-Diagram](./Diagrams/MediPredict.png)
 MediPredict is the component of MediPoint that predicts the disease after getting the symptoms of the customer as input. This component can help the customer to know what his/her symptoms signify and avoid jumping to impromptu conclusion.
 **Features** : <br/>
 1. Predict the disease by taking symptoms input from user
@@ -75,7 +75,7 @@ MediPredict is the component of MediPoint that predicts the disease after gettin
 #### MediStore
 <!-- 
 ![MediStore-Logo](./Logo/MediStore.png) -->
-![MediStore-Diagram](./Diagrams/MediStore.jpg)
+![MediStore-Diagram](./Diagrams/MediStore.png)
 MediStore has two parts
 Document Logger - Stores prescription and important documents of the user 
 Medicine Logger - Logs medicines dose.
