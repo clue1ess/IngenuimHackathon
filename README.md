@@ -30,36 +30,32 @@ MediPoint is an online healthcare platform which is designed for the greater goo
 7. User can use *MediStore* as a storage for medical documents and medicine logs.
 
 #### MediAppoint
-
-![MediAppoint-Logo](./Logo/MediAppoint.png)
+<!-- 
+![MediAppoint-Logo](./Logo/MediAppoint.png) -->
 ![MediAppoint-Diagram](./Diagrams/MediAppoint.jpg)
-
 MediAppoint is the component of our application that deals with scheduling appointments of patients with their Doctors. We focus on saving our customers time and avoid the long waiting period. There is a transparency in the time-slot bookings, customer can check for the available slots and book an appointment as per his/her convenience. 
 
 #### MediPedia
 
-![MediPedia-Logo](./Logo/MediPedia.png)
+<!-- ![MediPedia-Logo](./Logo/MediPedia.png) -->
 ![MediPedia-Diagram](./Diagrams/MediPedia.jpg)
-
 MediPedia is the encyclopedia of diseases at your fingertip. Customers can select a disease and get all information like the symptoms, causes, precautions etc. 
 
 #### MediCure
 
-![MediCure-Logo](./Logo/MediCure.png)
+<!-- ![MediCure-Logo](./Logo/MediCure.png) -->
 ![MediCure-Diagram](./Diagrams/MediCure.jpg)
-
 We live in a society where our Grandma’s Nuskha is the first step towards cure after every trivial infection. This component of MediPoint is a solution for the customer’s plight as it provides information about a First Aid treatment for an infection without having to visit the doctor in person. Medicure focuses on providing a home remedy for the selected disease/infection. 
 
 #### MediPredict
 
-![MediPredict-Logo](./Logo/MediPredict.png)
+<!-- ![MediPredict-Logo](./Logo/MediPredict.png) -->
 ![MediPredict-Diagram](./Diagrams/MediPredict.jpg)
-
 MediPredict is the component of MediPoint that predicts the disease after getting the symptoms of the customer as input. This component can help the customer to know what his/her symptoms signify and avoid jumping to impromptu conclusion.
 
 #### MediStore
-
-![MediStore-Logo](./Logo/MediStore.png)
+<!-- 
+![MediStore-Logo](./Logo/MediStore.png) -->
 ![MediStore-Diagram](./Diagrams/MediStore.jpg)
 
 MediStore has two parts
@@ -114,7 +110,7 @@ Medicine Logger - Logs medicines dose.
 5. **First Aid treatment** - User can get home remedies for the diseases which can act as first aid or additional help in treatment of diseases.
 6. **ML prediction of diseases using symptoms** - Helpful for users who are unsure about the disease 
 
-MediPoint can earn profit by 
+**MediPoint can earn profit by**
 1. Advertisement
 2. Commision from hospitals
 3. Companies can sponsor Medipoint under CSR.
