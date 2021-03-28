@@ -278,5 +278,7 @@ IngenuimHackathon
 2. MediBot - Trained Bot which can help users to solve healthcare problems more efficiently.
 3. Integrating Payment gateways for paying medical charges 
 4. MediCare - online medicine/healthcare related products selling app
-5. MediHabit - Schedule the healthly daily habits ike workout, eating vegetables, ect
+5. MediHabit - Schedule the daiky healthy habits ike workout, eating vegetables, ect
 6. MediDaily - Health news Channel
+7. As Documents needs to be stored securely, blockchain technology can be used.
+8. MediTrack - Location of nearby hospitals and availability of nearby ambulance services can also be integrated.
